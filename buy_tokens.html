@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tokens</title>
+    <link rel="stylesheet" href="stylebuy.css">
+    <script defer src="scriptbuy.js"></script>
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <img src="path/to/your/logo.png" alt="Company Logo">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="buy_tokens.html">Buy Tokens</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li class="search-container">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </li>
+        </ul>
+        <div class="profile-and-more">
+            <div class="profile-icon">
+                <img src="path/to/your/profile-icon.png" alt="User Profile">
+            </div>
+            <div class="more-options" id="more-options">
+                <div class="dots" id="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <ul class="dropdown" id="dropdown">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Options</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="buy_tokens.html">Buy Tokens</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Buy Tokens</h1>
+        <form id="payment-form">
+            <div>
+                <label for="token-amount">Select Token Amount</label>
+                <select id="token-amount">
+                    <option value="1000">10 Tokens - $10</option>
+                    <option value="5000">50 Tokens - $50</option>
+                    <option value="10000">100 Tokens - $100</option>
+                </select>
+            </div>
+            <div id="card-element"></div>
+            <button id="submit">Buy Tokens</button>
+        </form>
+        <div id="card-errors" role="alert"></div>
+    </div>
+    <script>
+        const stripe = Stripe('your-publishable-key-here');
+        const elements = stripe.elements();
+        const card = elements.create('card');
+        card.mount('#card-element');
+
+        card.on('change', (event) => {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const { token, error } = await stripe.createToken(card);
+            if (error) {
+                const errorElement = document.getElementById('card-errors');
+                errorElement.textContent = error.message;
+            } else {
+                handleToken(token);
+            }
+        });
+
+        function handleToken(token) {
+            fetch('/charge', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    token: token.id,
+                    amount: document.getElementById('token-amount').value,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'succeeded') {
+                    alert('Payment successful!');
+                } else {
+                    alert('Payment failed. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

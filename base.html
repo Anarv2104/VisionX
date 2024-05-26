@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <img src="VisionX_croppped.jpg" alt="Company Logo">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="buy_tokens.html">Buy Tokens</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li class="search-container">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </li>
+        </ul>
+        <div class="profile-and-more">
+            <div class="profile-icon">
+                <img src="path/to/your/profile-icon.png" alt="User Profile">
+            </div>
+            <div class="more-options" id="more-options">
+                <div class="dots" id="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <ul class="dropdown" id="dropdown">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Options</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="buy_tokens.html">Buy Tokens</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <section class="profile-cards">
+            <h2>Best Experienced</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>John Doe</h3>
+                    <p>15 years of experience in Full Stack Development.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="woman.jpg" alt="Developer">
+                    <h3>Sarah Connor</h3>
+                    <p>12 years of experience in AI and Machine Learning.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>Michael Brown</h3>
+                    <p>18 years of experience in Software Architecture.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+            </div>
+            <h2>High Rated</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>Jane Smith</h3>
+                    <p>10 years of experience in Backend Development.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="woman.jpg" alt="Developer">
+                    <h3>Emily White</h3>
+                    <p>9 years of experience in Data Analysis.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="man.png alt="Developer">
+                    <h3>Chris Green</h3>
+                    <p>11 years of experience in Cloud Computing.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+            </div>
+            <h2>Intermediate</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>Mike Johnson</h3>
+                    <p>5 years of experience in Frontend Development.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="woman.jpg" alt="Developer">
+                    <h3>Lisa Black</h3>
+                    <p>6 years of experience in UX/UI Design.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                    
+                </div>
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>Tom Lee</h3>
+                    <p>4 years of experience in Cybersecurity.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+            </div>
+            <h2>Beginners</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="woman.jpg" alt="Developer">
+                    <h3>Emily Brown</h3>
+                    <p>2 years of experience in Mobile App Development.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>Jake Wilson</h3>
+                    <p>1 year of experience in DevOps.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="woman.jpg" alt="Developer">
+                    <h3>Anna Scott</h3>
+                    <p>2 years of experience in QA Testing.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+            </div>
+            <h2>New Profiles</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>Chris Wilson</h3>
+                    <p>Fresh graduate specializing in Data Science.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="woman.jpg" alt="Developer">
+                    <h3>Laura Adams</h3>
+                    <p>New developer with focus on Blockchain technology.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+                <div class="card">
+                    <img src="man.png" alt="Developer">
+                    <h3>Steve Rogers</h3>
+                    <p>Recent graduate in Game Development.</p>
+                    <div class="tokens">Tokens: 50</div>
+                    <button type="button" class="connect-button">Connect</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        // JavaScript to handle dropdown
+        document.querySelector('.more-button').addEventListener('click', () => {
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

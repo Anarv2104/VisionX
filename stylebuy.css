@@ -1,0 +1,394 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffe4e1; /* Light pink background */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff4500; /* OrangeRed */
+    padding: 10px 20px;
+    color: #fff;
+    position: relative;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-links a:hover {
+    background-color: #ff6347; /* Tomato */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    background-color: #ff6347; /* Tomato */
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+    margin-left: 10px;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.navbar-links input {
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon {
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.more-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.more-button:hover .dropdown-content {
+    display: block;
+}
+
+.content {
+    padding: 20px;
+    /* max-width: 800px;
+    margin: auto; */
+    text-align: center;
+}
+
+#payment-form {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#card-element {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button#submit {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button#submit:hover {
+    background-color: #ff4500;
+}
+
+#card-errors {
+    color: red;
+    margin-top: 10px;
+}
+
+
+
+.profile-and-more {
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.more-options {
+    position: relative;
+}
+
+.dots {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.dots .dot {
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    margin: 2px 0;
+    border-radius: 50%;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #333; /* Dark gray */
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown li {
+margin: 5px 0;
+}
+
+.dropdown a {
+color: #fff;
+text-decoration: none;
+padding: 5px 10px;
+display: block;
+transition: background-color 0.3s;
+}
+
+.dropdown a:hover {
+background-color: #575757;
+}
+
+/* Sidebar Styles */
+.sidebar {
+z-index: 9999; /* Set a high z-index value */
+position: fixed;
+top: 0;
+left: -250px;
+width: 250px;
+height: 100%;
+background-color: #333;
+overflow: hidden;
+transition: left 0.3s;
+padding-top: 60px; /* Space for navbar */
+border-radius: 0 15px 15px 0; /* Rounded left corners */
+}
+
+.sidebar .close-btn {
+position: absolute;
+top: 20px;
+right: 20px;
+font-size: 24px;
+color: #fff;
+cursor: pointer;
+}
+
+.sidebar ul {
+list-style: none;
+padding: 20px;
+}
+
+.sidebar ul li {
+margin: 15px 0;
+}
+
+.sidebar ul li a {
+color: #fff;
+text-decoration: none;
+display: block;
+transition: background-color 0.3s;
+padding: 10px;
+}
+
+.sidebar ul li a:hover {
+background-color: #575757;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+    }
+
+    .navbar-left {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+    
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    .search-container {
+        justify-content: center;
+    }
+    
+    .card {
+        width: calc(50% - 20px);
+    }
+    }
+
+#submit {
+        background-color: #FF5733;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    
+#submit:hover {
+        background-color: #FF4500;
+    }
+    
+#error-message {
+        color: red;
+        margin-top: 10px;
+    }
+    
