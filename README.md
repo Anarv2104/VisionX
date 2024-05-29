@@ -96,8 +96,6 @@ visionx/
   Create a new Pull Request
   License
 
-### This project is licensed under the MIT License - see the LICENSE file for details.
-
 ### Contact
 
   If you have any questions or suggestions about VisionX, feel free to reach out to us.
