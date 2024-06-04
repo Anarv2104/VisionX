@@ -1,11 +1,5 @@
 # VisionX
 
-## Team Members:-
-  #### 1.Anarv Vasavada -@Anarv2104
-  #### 2.Harshil Parmar -@Harshil2301
-  #### 3.Meet Patel -@meetvpatel5783
-  #### 4.Het Kothari -@het1305
-  
 ## Introduction
 VisionX is an innovative platform designed to enhance collaboration among developers and experts across various domains. Leveraging blockchain technology, VisionX introduces a unique token-based system that facilitates secure, transparent, and efficient interactions between users.
 
